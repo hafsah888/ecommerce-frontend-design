@@ -2391,18 +2391,18 @@ input[type="range"]::-webkit-slider-thumb {
 
 
 
-.page-wrapper {
+.cart-wrapper {
   width: 1180px;
   margin: 0 auto;
   padding: 40px 0;
   display: block;
 }
 
-.page-wrapper > .cart-title,
-.page-wrapper > .cart-content,
-.page-wrapper > .trust-badges,
-.page-wrapper > .saved-box,
-.page-wrapper > .promo-banner {
+.cart-wrapper > .cart-title,
+.cart-wrapper > .cart-content,
+.cart-wrapper > .trust-badges,
+.cart-wrapper > .saved-box,
+.cart-wrapper > .promo-banner {
   width: 100%;
   display: block;
   float: none;
@@ -2760,7 +2760,6 @@ input[type="range"]::-webkit-slider-thumb {
   color: #A9ACB0;
 }
 
-/* ===== SAVED FOR LATER ===== */
 .saved-box {
   width: 100%;
   display: block;
@@ -2840,7 +2839,7 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-/* ===== PROMO BANNER ===== */
+
 .promo-banner {
   width: 100%;
   max-width: 1180px;
@@ -2907,7 +2906,6 @@ input[type="range"]::-webkit-slider-thumb {
   align-items: flex-start;
 }
 
-/* ===== GALLERY ===== */
 .gallery-section {
   width: 380px;
   min-width: 380px;
@@ -2960,7 +2958,6 @@ input[type="range"]::-webkit-slider-thumb {
   display: block;
 }
 
-/* ===== PRODUCT INFO ===== */
 .info-section {
   flex: 1;
   min-width: 0;
@@ -2985,10 +2982,9 @@ input[type="range"]::-webkit-slider-thumb {
   line-height: 28px;
   letter-spacing: -0.2px;
   margin-bottom: 12px;
-  width: 384px;
+  max-width: 384px;
 }
 
-/* Rating Row */
 .rating-row {
   display: flex;
   align-items: center;
@@ -3030,13 +3026,12 @@ input[type="range"]::-webkit-slider-thumb {
   color: #8B96A5;
 }
 
-/* Trade Price Box */
 .trade-price-box {
   display: flex;
   border: 1px solid #BDC1C8;
   border-radius: 4px;
   background: #FFF0DF;
-  width: 430px;
+  max-width: 430px;
   margin-bottom: 16px;
   overflow: hidden;
 }
@@ -3072,9 +3067,8 @@ input[type="range"]::-webkit-slider-thumb {
   line-height: 100%;
 }
 
-/* Short Info Table */
 .short-info {
-  width: 430px;
+  max-width: 430px;
   border: 1px solid #E0E0E0;
   border-radius: 4px;
   overflow: hidden;
@@ -3112,7 +3106,6 @@ input[type="range"]::-webkit-slider-thumb {
   line-height: 100%;
 }
 
-/* ===== SUPPLIER CARD ===== */
 .supplier-card {
   width: 280px;
   min-width: 280px;
@@ -3120,6 +3113,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 6px;
   background: #fff;
   padding: 16px;
+   flex-shrink: 0;
   box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.08);
 }
 

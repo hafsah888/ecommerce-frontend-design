@@ -10,7 +10,7 @@ body{
 
 /* Header */
 .header{
-    width:1440px;
+    width:100%;
     height:86px;
     position:relative;
     background:#fff;
@@ -200,7 +200,7 @@ body{
 ========================== */
 
 .navbar{
-    width:1440px;
+    width:100%;
     height:56px;
 
     background:#FFFFFF;
@@ -308,7 +308,7 @@ body{
 ===================== */
 
 .newsletter{
-    width:1440px;
+    width:100%;
     height:190px;
 
     background:#EFF2F4;
@@ -394,7 +394,7 @@ body{
     );
 }
 .footer{
-    width:1440px;
+    width:100%;
     background:#fff;
 }
 
@@ -502,7 +502,8 @@ body{
 .section-main{
     display:flex;
     gap:10px;
-    width: 1180px;
+    width: 100%;
+    max-width: 1180px;
     height: 400px;
     opacity: 1;
      margin: 20px auto;
@@ -680,13 +681,15 @@ body{
 .deals-section {
     display: flex;
     align-items: center;
-    width: 1180px;
+    width: 100%; 
+    max-width: 1180px;
     height: 240px;
     border: 1px solid #DEE2E7;
     border-radius: 6px;
     margin: 20px auto;
     padding: 20px;
     gap: 20px;
+    margin: 20px auto;
 }
 
 .deals-left {
@@ -786,7 +789,9 @@ body{
 
 .home-outdoor-section {
     display: flex;
-    width: 1180px;
+    width: 100%;
+    max-width: 1180px; 
+    margin: 20px auto;
     height: 257px;
     margin: 20px auto;
     border: 1px solid #E2E2E2;
@@ -885,7 +890,8 @@ body{
 
 .gadget-section {
     display: flex;
-    width: 1180px;
+    width: 100%; 
+    max-width: 1180px;  
     height: 257px;
     margin: 20px auto;
     border: 1px solid #E2E2E2;
@@ -984,7 +990,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1180px;
+    width: 100%;
+    max-width: 1180px;  
     height: 420px;
     margin: 20px auto;
     border: 1px solid #E0E0E0;
@@ -1125,8 +1132,8 @@ body{
 
 
 .recommend-section {
-    width: 1180px;
-    height: 696px;
+    width: 100%; 
+    max-width: 1180px; 
     margin: 20px auto;
 }
 
@@ -1186,7 +1193,8 @@ body{
 
 
 .service-section {
-    width: 1180px;
+    width: 100%; 
+    max-width: 1180px;
     height: 256px;
     margin: 20px auto;
 }
@@ -1275,7 +1283,8 @@ body{
 
 
 .country-section {
-    width: 1177px;
+    width: 100%;
+    max-width: 1180px;
     height: 138px;
     margin: 20px auto;
 }
@@ -1340,7 +1349,7 @@ body{
 
 
 .breadcrumb-container {
-  width: 1440px;
+  width: 100%; 
   height: 64px;
   background: #f7f7f7; 
   display: flex;
@@ -3512,4 +3521,20 @@ input[type="range"]::-webkit-slider-thumb {
 
 .btn-shop-now:hover {
   background: #e07f0f;
+}
+
+
+
+.btn-add-to-cart {
+    width: 100%;
+    height: 40px;
+    background: #FF9017;
+    border: none;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    margin-bottom: 8px;
 }

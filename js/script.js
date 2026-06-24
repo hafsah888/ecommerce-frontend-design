@@ -1,13 +1,11 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Helper function to attach events to multiple elements
     const on = (selector, event, handler) => {
         document.querySelectorAll(selector).forEach(el => el.addEventListener(event, handler));
     };
 
-    // ==========================================
-    // 1. Countdown Timer (Home Page - Deals Section)
-    // ==========================================
+
     const timerBoxes = document.querySelectorAll('.deals-section .timer-box');
     if (timerBoxes.length === 4) {
         let t = [];
@@ -28,10 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         const interval = setInterval(tick, 1000);
     }
-
-    // ==========================================
-    // 2. Product Detail Gallery
-    // ==========================================
     on('.thumb', 'click', function() {
         document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
@@ -39,17 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mainImg) mainImg.src = this.querySelector('img').src;
     });
 
-    // ==========================================
-    // 3. Product Detail Tabs
-    // ==========================================
     on('.tab-bar .tab', 'click', function() {
         document.querySelectorAll('.tab-bar .tab').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
     });
 
-    // ==========================================
-    // 4. Filters Accordion (Grid/List View)
-    // ==========================================
+
     on('.filter-heading, .section-heading, .filter-accordion-row', 'click', function() {
         const icon = this.querySelector('i, .arrow');
         if (icon) {
@@ -62,9 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================
-    // 5. Filter Tags Removal
-    // ==========================================
     on('.filter-tag .fa-xmark', 'click', function() {
         this.closest('.filter-tag').remove();
     });
@@ -74,9 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.filter-tag').forEach(t => t.remove());
     });
 
-    // ==========================================
-    // 6. View Toggle & Pagination
-    // ==========================================
+
     on('.view-btn', 'click', function() {
         document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
@@ -89,9 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================
-    // 7. Wishlist / Favorite Toggle
-    // ==========================================
     on('.favorite-btn, .wishlist-btn', 'click', function(e) {
         e.preventDefault();
         const icon = this.querySelector('i');
@@ -112,15 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================
-    // 8. Cart Page Functionality
-    // ==========================================
-    // Remove single item
     on('.btn-remove', 'click', function() {
         this.closest('.cart-item').remove();
     });
 
-    // Remove all items
     const removeAllBtn = document.querySelector('.btn-remove-all');
     if (removeAllBtn) {
         removeAllBtn.addEventListener('click', () => {
@@ -131,19 +107,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Save for later
+
     on('.btn-save', 'click', function() {
         alert('Item saved for later!');
         this.closest('.cart-item').remove();
     });
 
-    // Move to cart
+
     on('.btn-move', 'click', function() {
         alert('Item moved to cart!');
         this.closest('.saved-item').remove();
     });
 
-    // Quantity Box Click (Dummy increment)
     on('.qty-box', 'click', function() {
         const span = this.querySelector('span');
         let match = span.textContent.match(/Qty: (\d+)/);
@@ -153,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Apply Coupon
+  
     on('.coupon-input-group .btn-apply', 'click', function() {
         const input = document.querySelector('.coupon-input');
         if (input.value.trim() !== '') {
@@ -163,9 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================
-    // 9. Checkout & Redirects
-    // ==========================================
     const checkoutBtn = document.querySelector('.btn-checkout');
     if (checkoutBtn) checkoutBtn.addEventListener('click', () => alert('Proceeding to checkout...'));
     
@@ -175,9 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
     on('.btn-shopnow, .btn-shop-now', 'click', () => window.location.href = 'product_grid_view.html');
     on('.btn-send-inquiry, .btn-inquiry', 'click', () => alert('Inquiry sent successfully!'));
 
-    // ==========================================
-    // 10. Newsletter Form
-    // ==========================================
     on('.newsletter-form', 'submit', function(e) {
         e.preventDefault();
         const input = this.querySelector('input');
@@ -189,9 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================
-    // 11. Search & Header Actions
-    // ==========================================
     const searchBtn = document.querySelector('.search-btn');
     if (searchBtn) {
         searchBtn.addEventListener('click', () => {
@@ -210,5 +176,15 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'cart.html';
         }
     });
-
+const addToCartBtn = document.querySelector('.btn-add-to-cart');
+if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', function() {
+        addToCartBtn.textContent = '✓ Added to Cart!';
+        addToCartBtn.style.background = '#00B517';
+        setTimeout(function() {
+            addToCartBtn.innerHTML = '<i class="fa-solid fa-cart-shopping"></i> Add to Cart';
+            addToCartBtn.style.background = '';
+        }, 2000);
+    });
+}
 });
